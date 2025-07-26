@@ -4,6 +4,7 @@ import { withMermaid } from "vitepress-plugin-mermaid";
 
 // https://vitepress.dev/reference/site-config
 export default withMermaid({
+  ignoreDeadLinks: true,
   title: "LiteSuggarDocs",
   description: "All project of LiteSuggarDEV",
   themeConfig: {
