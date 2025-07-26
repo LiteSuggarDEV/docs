@@ -1,0 +1,61 @@
+<div align="center">
+  <a href="https://github.com/JohnRichard4096/nonebot_plugin_suggarchat/">
+    <img src="https://github.com/user-attachments/assets/b5162036-5b17-4cf4-b0cb-8ec842a71bc6" width="200" alt="SuggarChat Logo">
+  </a>
+  <h1>SuggarChat</h1>
+  <h3>高扩展性的大模型聊天框架</h3>
+</div>
+
+## ✨ 特性一览
+
+### 🚀 核心功能
+
+- ✅ 开箱即用的多种协议支持（OpenAI / DeepSeek / Gemini 等）
+- ✅ 可独立运行的聊天机器人
+- ✅ 支持群聊与私聊双模式
+- ✅ AT 触发与智能上下文管理
+- ✅ 戳一戳消息交互支持
+- ✅ 多模型热切换
+- ✅ 多角色热切换
+
+### 🧩 扩展体系
+
+- 🔌 模块化协议适配器架构
+- 🧠 自定义消息解析引擎
+- 📦 自定义依赖扩展式Matcher接口
+- 🧰 插件 API 全开放，易于开发拓展
+
+### 🛠️ 高级功能
+
+- 🤖 伪人模式（概率性自动回复）
+- ♻️ 消息撤回缓解机制
+- 🚨 异常日志自动推送管理群
+- ⏱️ 会话生命周期控制
+- 🔐 Token 智能管理策略
+
+## 📦 安装
+
+提供两种安装方式：
+
+- 方法一（推荐）：
+
+  ```bash
+  nb plugin install nonebot-plugin-suggarchat
+  ```
+
+- 方法二（手动安装）：
+
+  ```bash
+  pip install nonebot_plugin_suggarchat
+  ```
+
+  若使用方法二，还需在 `pyproject.toml` 中手动添加插件名：
+
+  ```toml
+  plugins = ["nonebot_plugin_suggarchat"]
+  ```
+
+---
+
+## [🧭 快速开始](/project/suggarchat/quick-start)
+
