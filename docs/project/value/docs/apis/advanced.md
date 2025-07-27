@@ -1,6 +1,6 @@
 # EconomyValue-高级 API 文档
 
-> **本 API 为服务层 API，包含有关数据库操作的核心逻辑**
+> **本 API 为服务层 API，包含有关数据库Repository操作的核心逻辑**
 
 ## currency-API(`~~`代指`~.services.balance`)
 

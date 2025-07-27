@@ -47,13 +47,13 @@ erDiagram
 
 > 开发规范：我们推荐您使用 UUID.hex 作为唯一 ID，而不是直接传入 ID（我们在uuid_lib.py提供了字符串转换函数`to_uuid`）。
 
+### [标准 API](./apis/standard.md)
+
+### [服务 API](./apis/advanced.md)
+
+### [底层 API](./apis/kernel.md)
+
 ### [依赖注入](./apis/depends.md)
-
-### [标准 API(表现层)](./apis/standard.md)
-
-### [进阶 API(服务层)](./apis/advanced.md)
-
-### [底层 API(数据层)](./apis/kernel.md)
 
 ### [钩子函数使用](./apis/hooks.md)
 

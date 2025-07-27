@@ -1,6 +1,6 @@
 # EconomyValue-底层 API 文档
 
-> **本 API 为数据层 API，包含操作数据库的底层逻辑**
+> **本 API 为数据层的 Repository API，包含操作数据库的底层逻辑**
 
 ## Repository(`~.repository`)
 
