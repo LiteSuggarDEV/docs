@@ -7,32 +7,6 @@
 - **交易前**：在交易发生之前，可以进行一些预处理，如检查账户余额是否充足、检查交易金额是否合法等。
 - **交易后**：在交易发生后，可以进行一些后续处理，如记录交易记录、发送交易通知等。
 
-### 流程图
-
-```mermaid
-
----
-title: EconomyValue交易时运行流程图
----
-
-sequenceDiagram
-    actor 其他插件
-    participant EconomyValueAPI
-    participant EconomyValue内部
-    
-
-    其他插件 ->> EconomyValueAPI: 创建交易
-    EconomyValueAPI ->> EconomyValue内部: 创建交易
-    EconomyValue内部 ->> PreHook: 交易前处理
-    PreHook ->> EconomyValue内部: 交易前处理完成
-    EconomyValue内部 ->> 数据库操作: 储存交易
-    数据库操作 ->> EconomyValue内部: 交易储存完成
-    EconomyValue内部 --) PostHook: 交易后处理
-    EconomyValue内部 ->> EconomyValueAPI: 交易处理完成
-    EconomyValueAPI ->> 其他插件: 返回结果
- 
-```
-
 ## API说明
 
 API位置：`nonebot_plugin_value.hook`

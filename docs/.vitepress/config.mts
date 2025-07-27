@@ -7,6 +7,16 @@ export default withMermaid({
   ignoreDeadLinks: true,
   title: "LiteSuggarDocs",
   description: "All project of LiteSuggarDEV",
+  head: [
+    // 添加图标
+    [
+      "link",
+      {
+        rel: "icon",
+        href: "https://avatars.githubusercontent.com/u/200794636?s=200&v=4",
+      },
+    ],
+  ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -65,6 +75,14 @@ export default withMermaid({
                       },
                     ],
                   },
+                ],
+              },
+              {
+                text: "LitePerm",
+                link: "/project/liteperm",
+                items: [
+                  { text: "指令", link: "/project/liteperm/docs/commands" },
+                  { text: "API", link: "/project/liteperm/docs/API" },
                 ],
               },
             ],
