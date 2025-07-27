@@ -30,7 +30,7 @@ export default withMermaid({
         text: "前言",
         items: [
           {
-            text: "项目",
+            text: "插件项目",
             items: [
               {
                 text: "SuggarChat",
@@ -83,6 +83,19 @@ export default withMermaid({
                 items: [
                   { text: "指令", link: "/project/liteperm/docs/commands" },
                   { text: "API", link: "/project/liteperm/docs/API" },
+                ],
+              },
+            ],
+          },
+          {
+            text: "机器人项目",
+            items: [
+              {
+                text: "LiteBot-NEO",
+                link: "/project/LiteBot",
+                items: [
+                  { text: "简介", link: "/project/LiteBot/readme" },
+                  { text: "功能", link: "/project/LiteBot/menu" }
                 ],
               },
             ],
