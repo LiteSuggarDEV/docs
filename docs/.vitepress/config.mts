@@ -13,7 +13,7 @@ export default withMermaid({
       "link",
       {
         rel: "icon",
-        href: "https://avatars.githubusercontent.com/u/200794636?s=200&v=4",
+        href: "/Suggar.png",
       },
     ],
   ],
@@ -23,7 +23,7 @@ export default withMermaid({
       { text: "首页", link: "/" },
       { text: "开始", link: "/next" },
     ],
-    logo: "https://avatars.githubusercontent.com/u/200794636?s=200&v=4",
+    logo: "/Suggar.png",
 
     sidebar: [
       {
