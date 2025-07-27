@@ -111,6 +111,7 @@ export default withMermaid({
             ],
           },
         ],
+        link: "https://docs.suggar.top/next.html",
       },
     ],
 
