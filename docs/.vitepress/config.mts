@@ -92,10 +92,10 @@ export default withMermaid({
             items: [
               {
                 text: "LiteBot-NEO",
-                link: "/project/LiteBot",
+                link: "/project/LiteBot/readme",
                 items: [
                   { text: "简介", link: "/project/LiteBot/readme" },
-                  { text: "功能", link: "/project/LiteBot/menu" }
+                  { text: "功能", link: "/project/LiteBot/menu" },
                 ],
               },
             ],
