@@ -1,6 +1,6 @@
 # Suggar-NEO
 
-![Suggar](https://raw.githubusercontent.com/LiteSuggarDEV/Suggar-NEO/refs/heads/main/readme_res/b_e0baa0b6de88513d9714babeffb39f37.jpg)
+![Suggar](/Suggar.png)
 
 ---
 

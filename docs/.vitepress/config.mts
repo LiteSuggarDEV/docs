@@ -42,11 +42,9 @@ export default withMermaid({
                 ],
               },
               {
-                text: "SuggarChat-CloudFlare协议支持器",
+                text: "SuggarChat-CF",
                 link: "/project/suggarchat-ada-cf",
-                items: [
-                  { text: "开始", link: "/project/suggarchat-ada-cf" },
-                ],
+                items: [{ text: "开始", link: "/project/suggarchat-ada-cf" }],
               },
               {
                 text: "EconomyValue",

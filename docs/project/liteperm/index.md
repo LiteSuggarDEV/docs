@@ -2,7 +2,7 @@
 
 <div align="center">
   <a href="https://github.com/JohnRichard4096/nonebot_plugin_liteperm/">
-    <img src="https://github.com/user-attachments/assets/b5162036-5b17-4cf4-b0cb-8ec842a71bc6" width="200" alt="SuggarChat Logo">
+    <img src="/nonebot-plugin.png" width="200" alt="SuggarChat Logo">
   </a>
   <h1>LitePerm</h1>
   <h3>权限节点权限管理插件</h3>
