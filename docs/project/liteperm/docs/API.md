@@ -88,7 +88,7 @@ group_perm_checker = GroupPermissionChecker(permission="group.manage", only_grou
 async def handle_admin_command():
     ...
 
-@matcher.handle(permissiongroup_perm_checker.checker())
+@matcher.handle(permission=group_perm_checker.checker())
 async def handle_group_manage():
     ...
 ```

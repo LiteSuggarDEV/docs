@@ -5,8 +5,8 @@ import { withMermaid } from "vitepress-plugin-mermaid";
 // https://vitepress.dev/reference/site-config
 export default withMermaid({
   ignoreDeadLinks: true,
-  title: "LiteSuggarDocs",
-  description: "All project of LiteSuggarDEV",
+  title: "LiteSuggar",
+  description: "LiteSuggarDEV文档中心",
   head: [
     // 添加图标
     [
@@ -39,6 +39,13 @@ export default withMermaid({
                   { text: "快速开始", link: "/project/suggarchat/quick-start" },
                   { text: "进阶", link: "/project/suggarchat/next" },
                   { text: "高级", link: "/project/suggarchat/advanced" },
+                ],
+              },
+              {
+                text: "SuggarChat-CloudFlare协议支持器",
+                link: "/project/suggarchat-ada-cf",
+                items: [
+                  { text: "开始", link: "/project/suggarchat-ada-cf" },
                 ],
               },
               {
@@ -97,6 +104,11 @@ export default withMermaid({
                   { text: "简介", link: "/project/LiteBot/readme" },
                   { text: "功能", link: "/project/LiteBot/menu" },
                 ],
+              },
+              {
+                text: "Suggar-NEO",
+                link: "/project/Suggar/readme",
+                items: [{ text: "简介", link: "/project/Suggar/readme" }],
               },
             ],
           },
