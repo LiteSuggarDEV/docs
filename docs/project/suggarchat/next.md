@@ -134,11 +134,7 @@ after_deleted_say_what = [ # 消息被删除后的随机回复内容
     "哎呀，我也有尴尬的时候呢~",
     "希望我能继续为你提供帮助，不要太在意我的小错误哦！",
 ]
-```
 
-#### 3.x 提供额外选项
-
-```toml
 [preset_extension]
 backup_preset_list = [] # 自动切换的备选模型（预设名称）
 
@@ -151,6 +147,10 @@ require_tools = false # 是否要求LLM调用至少一个的Tool
 cookie = "" # Cookie字符串（需要手动注入到提示词）
 enable_cookie = false # 启用
 block_msg = [] # 检测到Cookie输出熔断会话时输出什么？
+
+[encoding_settings]
+force_utf8 = true # 是否启用编码强制转换(转换为UTF-8)？
+
 ```
 
 ## 模型预设
