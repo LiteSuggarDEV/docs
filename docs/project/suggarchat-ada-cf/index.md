@@ -28,7 +28,7 @@ Cloudflare Workers AI 协议适配器，用于 [SuggarChat](https://github.com/L
 
 ## ⚙️ 配置
 
-在配置文件中新增了以下字段：
+在模型预设配置文件中新增了以下字段：
 
 | 配置项       | 说明                                                                                                          | 默认值 |
 | ------------ | ------------------------------------------------------------------------------------------------------------- | ------ |
@@ -50,7 +50,7 @@ protocol = "cf"
 model = "llama-3.2-xxxx"
 ```
 
-无需使用 `@` 进行拼接，为了兼容性使用@也会被接受。具体参数与格式请参考 [SuggarChat 官方文档](https://github.com/LiteSuggarDEV/nonebot_plugin_suggarchat)。
+无需使用 `@` 进行拼接，为了兼容性使用@也会被接受。具体参数与格式请参考 [SuggarChat 官方文档](/project/suggarchat/readme.md)。
 
 ---
 
