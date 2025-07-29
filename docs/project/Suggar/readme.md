@@ -45,18 +45,8 @@ SQLALCHEMY_DATABASE_URL=sqlite+aiosqlite:///data.db
 
 **2.yaml**
 
-```
+```yml
 admins: []
-cookies:
-  block_msg: []
-  cookie: ""
-  cookie_check: true
-llm_extension:
-  avaliable_presets: []
-  enable_auto_switch: true
-llm_tools:
-  enable_report: true
-  require_tools: false
 notify_group: []
 public_group: 0
 rate_limit: 6
@@ -70,16 +60,6 @@ tools_calling: true
 1. `admins`: 管理员 QQ（给出了一个示例）
 2. `notify_group`: 日志推送群
 3. `rate_limit`: 命令频率限制(秒)W
-4. `cookies`: Cookie相关配置
-   - `block_msg`: 被拦截消息列表
-   - `cookie`: Cookie值
-   - `cookie_check`: 是否启用Cookie检查
-5. `llm_extension`: LLM扩展配置
-   - `avaliable_presets`: 可用预设列表
-   - `enable_auto_switch`: 是否启用自动切换
-6. `llm_tools`: LLM工具配置
-   - `enable_report`: 是否启用报告功能
-   - `require_tools`: 是否需要工具调用
 7. `public_group`: 公共群组ID
 8. `rate_reply`: 频率限制回复消息列表
 9. `tools_calling`: 是否启用工具调用功能
@@ -113,3 +93,7 @@ tools_calling: true
 ## 注意事项
 
 **Tools调用**不支持非OPENAI以外的其他协议
+
+## 提示词配置
+
+我们已经公开了Suggar的Prompt，你可以在[这里](./prompt.md)查看。
