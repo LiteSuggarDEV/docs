@@ -27,8 +27,9 @@ export default withMermaid({
 
     sidebar: [
       {
-        text: "前言",
+        text: "目录",
         items: [
+          { text: "前言", link: "/next" },
           {
             text: "插件项目",
             items: [
@@ -111,7 +112,6 @@ export default withMermaid({
             ],
           },
         ],
-        link: "https://docs.suggar.top/next.html",
       },
     ],
 

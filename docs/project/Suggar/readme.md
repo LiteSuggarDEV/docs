@@ -19,7 +19,7 @@
 
 我们有两个配置文件，一个是 dotenv 文件，一个是 yaml 文件。
 
-**1.dotenv 文件**
+#### **1.dotenv 文件**
 
 参考.env.example（bot 启动时会自动创建基于.env.example 的.env，请不要修改.env.example，这可能会为后期更新带来麻烦）
 
@@ -43,7 +43,7 @@ SQLALCHEMY_DATABASE_URL=sqlite+aiosqlite:///data.db
 6. `COMMAND_SEP`: 命令分隔符
 7. `SQLALCHEMY_DATABASE_URL`: 数据库连接字符串
 
-**2.yaml**
+#### **2.yaml**
 
 ```yml
 admins: []
@@ -60,13 +60,13 @@ tools_calling: true
 1. `admins`: 管理员 QQ（给出了一个示例）
 2. `notify_group`: 日志推送群
 3. `rate_limit`: 命令频率限制(秒)W
-7. `public_group`: 公共群组ID
-8. `rate_reply`: 频率限制回复消息列表
-9. `tools_calling`: 是否启用工具调用功能
+4. `public_group`: 公共群组ID
+5. `rate_reply`: 频率限制回复消息列表
+6. `tools_calling`: 是否启用工具调用功能
 
-**3.suggarchat 配置文件**
+**3.SuggarChat 配置文件**
 
-**[请参考 SuggarChat 文档](https://github.com/LiteSuggarDEV/nonebot_plugin_suggarchat/wiki)**
+**[请参考 SuggarChat 文档](/project/suggarchat/)**
 
 #### 数据库
 

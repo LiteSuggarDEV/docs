@@ -1,6 +1,6 @@
 # nonebot_plugin_suggarex_cf
 
-Cloudflare Workers AI 协议适配器，用于 [SuggarChat](https://github.com/LiteSuggarDEV/nonebot_plugin_suggarchat)
+Cloudflare Workers AI 协议适配器，用于 [SuggarChat](/project/suggarchat/)
 
 > 为 SuggarChat 提供 Cloudflare Workers AI 接入支持
 
