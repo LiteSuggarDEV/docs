@@ -77,40 +77,41 @@ at+文字：
 
 ### **配置项完整说明**
 
-#### 配置文件
+#### 配置文件(3.1.0+)
 
 ```toml
-enable = false
-parse_segments = true
-matcher_function = true
-preset = "default"
-group_prompt_character = "default"
-private_prompt_character = "default"
+# 基本配置
+enable = false # 是否启用 SuggarChat
+parse_segments = true # 是否解析消息段（@/合并转发等）
+matcher_function = true # 是否启用 SuggarMatcher 功能
+preset = "default" # 预设模型配置名称
+group_prompt_character = "default" # 群聊提示词模板名称
+private_prompt_character = "default" # 私聊提示词模板名称
 
 [preset_extension]
-backup_preset_list = []
+backup_preset_list = [] # 自动切换的备选模型（预设名称）
 
-[default_preset]
-model = ""
-name = "default"
-base_url = ""
-api_key = ""
-protocol = "__main__"
-thought_chain_model = false
-multimodal = false
+[default_preset] # 默认预设设置
+model = "" # 使用的模型选择
+name = "default" # 预设名称
+base_url = "" # API 基础地址
+api_key = "" # API 密钥
+protocol = "__main__" # 协议适配器
+thought_chain_model = false # 是否启用特殊的思维链模型优化
+multimodal = false # 是否支持多模态模型传图
 
-[default_preset.extra]
+[default_preset.extra] # 默认预设扩展部分
 
-[session]
-session_control = false
-session_control_time = 60
-session_control_history = 10
-session_max_tokens = 5000
+[session] # 会话控制相关设置
+session_control = false # 是否启用会话超时控制
+session_control_time = 60 # 会话超时时间（分钟）
+session_control_history = 10 # 保留的会话历史最大条数
+session_max_tokens = 5000 # 上下文最大 token 数
 
-[cookies]
-cookie = ""
-enable_cookie = false
-block_msg = [
+[cookies] # Cookies 设置，用于检测提示词是否泄露
+cookie = "" # Cookie 字符串
+enable_cookie = false # 是否启用 Cookie 检测
+block_msg = [ # 检测到 Cookie 输出熔断会话时输出的内容
     "喵呜～这个问题有点超出Suggar的理解范围啦(歪头)",
     "（耳朵耷拉）这个...Suggar暂时回答不了呢＞﹏＜",
     "喵？这个话题好像不太适合讨论呢～",
@@ -161,27 +162,27 @@ block_msg = [
 ]
 
 [encoding_settings]
-force_utf8 = true
+force_utf8 = true # 是否启用编码强制转换（转换为 UTF-8）
 
-[autoreply]
-enable = false
-global_enable = false
-probability = 0.01
-keyword = "at"
+[autoreply] # 自动回复设置
+enable = false # 是否允许启用自动回复模式支持
+global_enable = false # 是否全局启用自动回复模式
+probability = 0.01 # 随机回复概率（0.01 表示 1%）
+keyword = "at" # 触发方式：at=被 @ 时触发
 
-[function]
-synthesize_forward_message = true
-nature_chat_style = true
-poke_reply = true
-enable_group_chat = true
-enable_private_chat = true
-allow_custom_prompt = true
+[function] # 功能开关
+synthesize_forward_message = true # 合成转发消息
+nature_chat_style = true # 是否启用自然对话风格
+poke_reply = true # 是否启用戳一戳回复功能
+enable_group_chat = true # 是否启用群聊功能
+enable_private_chat = true # 是否启用私聊功能
+allow_custom_prompt = true # 是否允许用户自定义提示词补充部分
 
-[extended]
-say_after_self_msg_be_deleted = false
-group_added_msg = "你好，我是Suggar，欢迎使用SuggarAI聊天机器人..."
-send_msg_after_be_invited = false
-after_deleted_say_what = [
+[extended] # 扩展设置
+say_after_self_msg_be_deleted = false # 消息被删除后是否自动回复
+group_added_msg = "你好，我是Suggar，欢迎使用SuggarAI聊天机器人..." # 被拉入群组时发送的欢迎消息
+send_msg_after_be_invited = false # 被邀请进群后是否发送消息
+after_deleted_say_what = [ # 消息被删除后的随机回复内容列表
     "Suggar说错什么话了吗～下次我会注意的呢～",
     "抱歉啦，不小心说错啦～",
     "嘿，发生什么事啦？我",
@@ -197,29 +198,29 @@ after_deleted_say_what = [
     "希望我能继续为你提供帮助，不要太在意我的小错误哦！",
 ]
 
-[admin]
-allow_send_to_admin = false
-admin_group = 0
-admins = []
+[admin] # 管理员设置
+allow_send_to_admin = false # 是否允许向管理群组发送消息
+admin_group = 0 # 管理群组 ID
+admins = [] # 管理员用户 ID 列表
 
-[llm_config]
-stream = false
-memory_lenth_limit = 50
-use_base_prompt = true
-max_tokens = 100
-tokens_count_mode = "bpe"
-enable_tokens_limit = true
-llm_timeout = 60
+[llm_config] # LLM 配置
+stream = false # 是否启用流式传输
+memory_lenth_limit = 50 # 单会话允许存储的最大消息数
+use_base_prompt = true # 是否使用基础提示词
+max_tokens = 100 # 单次对话 LLM 最大生成 token 数
+tokens_count_mode = "bpe" # tokens 计算模式：word（词）/bpe（子词）/char（字符）
+enable_tokens_limit = true # 是否启用上下文长度限制
+llm_timeout = 60 # LLM 请求超时时间（秒）
 
-[llm_config.tools]
-enable_tools = true
-enable_report = true
-require_tools = false
+[llm_config.tools] # 工具调用设置
+enable_tools = true # 启用 Tools 调用
+enable_report = true # 启用内置的 NSFW 举报工具
+require_tools = false # 是否要求 LLM 调用至少一个 Tool
 
-[extra]
+[extra] # 额外配置
 ```
 
-#### 旧版
+#### 旧版(3.0-3.0.1)
 
 <details>
 
