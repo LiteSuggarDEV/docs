@@ -216,6 +216,7 @@ llm_timeout = 60 # LLM 请求超时时间（秒）
 [llm_config.tools] # 工具调用设置
 enable_tools = true # 启用 Tools 调用
 enable_report = true # 启用内置的 NSFW 举报工具
+report_then_block = true # 消息被检测违规后是否熔断服务
 require_tools = false # 是否要求 LLM 调用至少一个 Tool
 
 [extra] # 额外配置
