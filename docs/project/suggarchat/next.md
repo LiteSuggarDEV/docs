@@ -177,6 +177,7 @@ poke_reply = true # 是否启用戳一戳回复功能
 enable_group_chat = true # 是否启用群聊功能
 enable_private_chat = true # 是否启用私聊功能
 allow_custom_prompt = true # 是否允许用户自定义提示词补充部分
+use_user_nickname = false # 使用用户QQ昵称而不是群内昵称（仅群聊时）
 
 [extended] # 扩展设置
 say_after_self_msg_be_deleted = false # 消息被删除后是否自动回复
