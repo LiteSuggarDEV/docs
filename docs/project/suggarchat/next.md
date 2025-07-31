@@ -216,6 +216,7 @@ llm_timeout = 60 # LLM 请求超时时间（秒）
 [llm_config.tools] # 工具调用设置
 enable_tools = true # 启用 Tools 调用
 enable_report = true # 启用内置的 NSFW 举报工具
+report_then_block = true # 消息被检测违规后是否熔断服务
 require_tools = false # 是否要求 LLM 调用至少一个 Tool
 
 [extra] # 额外配置
@@ -300,6 +301,12 @@ force_utf8 = true # 是否启用编码强制转换(转换为UTF-8)？
 ```
 
 </details>
+
+## Cookie检测
+
+通过检测特定字符串是否包含在模型输出来检测提示词是否泄露
+
+请在提示词文件写入`{cookie}`(最好在人设部分，这样如果Cookie泄露了人设差不多也出来了。)并配置配置文件的Cookie部分。
 
 ## 模型预设
 
