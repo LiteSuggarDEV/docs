@@ -79,7 +79,7 @@ class TransactionContext(BaseModel):
     """Transaction context
 
     Args:
-        BaseModel (BaseModel): pydantic BaseModel
+        BaseModel (BaseModel): extends pydantic BaseModel
     """
 
     user_id: str = Field(default_factory=str)  # 用户的唯一标识ID
@@ -90,6 +90,8 @@ class TransactionContext(BaseModel):
     def cancel(self, reason: str = ""):
         raise CancelAction(reason)
 
+    def commit_update(self):
+        raise DataUpdate(amount=self.amount) # 更新数据
 
 class TransactionComplete(BaseModel):
     """Transaction complete
