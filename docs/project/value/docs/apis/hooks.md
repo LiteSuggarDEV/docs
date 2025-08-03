@@ -45,28 +45,24 @@ class HooksManager:
 
 ### `hooks_type`
 
-`HooksType`是一个用于定义Hook的名称的类，它提供了两个静态方法`pre`和`post`，用于获取Hook的名称。
+`HooksType`是一个用于定义Hook的名称的枚举类，用于获取Hook的名称。
 
 ```python
-class HooksType:
-    __pre = "vault_pre_transaction"
-    __post = "vault_post_transaction"
+class HooksType(str, Enum):
+    PRE = "vault_pre_transaction"
+    POST = "vault_post_transaction"
 
     @classmethod
     def pre(cls) -> str:
-        return cls.__pre
+        return cls.PRE.value
 
     @classmethod
     def post(cls) -> str:
-        return cls.__post
-
-    @classmethod
-    def valid_hooks(cls, hook_name: str) -> bool:
-        return hook_name in [cls.__pre, cls.__post]
+        return cls.POST.value
 
     @classmethod
     def methods(cls) -> list[str]:
-        return [cls.__pre, cls.__post]
+        return [hook.value for hook in cls]
 ```
 
 ### `context`

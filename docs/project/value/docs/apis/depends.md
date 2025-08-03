@@ -82,11 +82,17 @@ from nonebot.params import Depends
 
 require("nonebot_plugin_value")
 from nonebot_plugin_value.api.depends.factory import DependsSwitch, UserAccountData
+from nonebot_plugin_value.api import AccountExecutor
 
 test = on_command("test")
-
+add_balance = on_command("add_balance")
 
 @test.handle()
 async def _(user_data: UserAccountData = Depends(DependsSwitch.account_data())):
     await test.finish(user_data.balance)
+
+@add_balance.handle()
+async def _(event:Event, executor: AccountExecutor = Depends(DependsSwitch.account_executor())):
+    await executor.add_balance(event, 100)
+    await add_balance.finish("添加成功")
 ```
