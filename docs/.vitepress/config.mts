@@ -4,6 +4,7 @@ import { withMermaid } from "vitepress-plugin-mermaid";
 
 // https://vitepress.dev/reference/site-config
 export default withMermaid({
+  lastUpdated: true,
   ignoreDeadLinks: true,
   title: "LiteSuggar",
   description: "LiteSuggarDEV文档中心",
@@ -114,7 +115,10 @@ export default withMermaid({
         ],
       },
     ],
-
+    footer: {
+      message: `MIT License 发布 ，部分内容使用 CC-BY-NC-SA-4.0 协议授权`,
+      copyright: `© LiteSuggarDEV 2024-${new Date().getFullYear()}`,
+    },
     socialLinks: [
       { icon: "github", link: "https://github.com/LiteSuggarDEV/docs" },
     ],
