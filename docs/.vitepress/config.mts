@@ -108,7 +108,10 @@ export default withMermaid({
               {
                 text: "Suggar-NEO",
                 link: "/project/Suggar/",
-                items: [{ text: "简介", link: "/project/Suggar/" }],
+                items: [
+                  { text: "简介", link: "/project/Suggar/" },
+                  { text: "角色档案", link: "/project/Suggar/intro" },
+                ],
               },
             ],
           },
