@@ -50,7 +50,7 @@ protocol = "cf"
 model = "llama-3.2-xxxx"
 ```
 
-无需使用 `@` 进行拼接，为了兼容性使用@也会被接受。具体参数与格式请参考 [SuggarChat 官方文档](/project/suggarchat/readme.md)。
+无需使用 `@` 进行拼接，为了兼容性使用@也会被接受。具体参数与格式请参考 [SuggarChat 官方文档](/project/suggarchat/)。
 
 ---
 

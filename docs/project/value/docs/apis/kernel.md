@@ -4,7 +4,7 @@
 
 ## Repository(`~.repository`)
 
-### 变量定义：
+### 变量定义
 
 ```python
 DEFAULT_NAME = "DEFAULT_CURRENCY_USD"
@@ -39,7 +39,9 @@ class CurrencyRepository:
     async def get_currency(self, currency_id: str) -> CurrencyMeta | None:
         """获取货币信息"""
         ...
-
+    async def get_currency_by_kwargs(self, **kwargs) -> CurrencyMeta | None:
+        """通过关键字获取货币信息"""
+        ...
     async def remove_currency(self, currency_id: str):
         """删除货币（警告！会同时删除所有关联账户！）"""
         ...
