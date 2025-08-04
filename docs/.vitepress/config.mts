@@ -20,6 +20,7 @@ export default withMermaid({
   ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+    siteTitle: "LiteSuggarDEV文档中心",
     nav: [
       { text: "首页", link: "/" },
       { text: "开始", link: "/next" },
