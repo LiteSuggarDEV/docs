@@ -226,6 +226,21 @@ async def list_currencies() -> list[CurrencyData]:
     ...
 ```
 
+### `~~.get_currency_by_kwargs`
+
+```python
+async def get_currency_by_kwargs(**kwargs: object) -> CurrencyData | None:
+    """获取一个货币信息
+
+    Args:
+        **kwargs (object): 通过货币属性联合查询获取货币信息
+
+    Returns:
+        CurrencyData | None: 货币数据，如果不存在则返回None
+    """
+    ...
+```
+
 ### `~~.get_currency`
 
 ```python

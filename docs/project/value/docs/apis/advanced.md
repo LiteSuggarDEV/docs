@@ -53,6 +53,25 @@ async def remove_currency(currency_id: str, session: AsyncSession):
     ...
 ```
 
+### `~~.get_currency_by_kwargs`
+
+```python
+async def get_currency_by_kwargs(
+    session: AsyncSession,
+    **kwargs: object,
+) -> CurrencyMeta | None:
+    """获取一个货币的元信息
+
+    Args:
+        session (AsyncSession): SQLAlchemy的异步session
+        kwargs (object): 货币元信息字段
+
+    Returns:
+        CurrencyMeta | None: 货币元数据（不存在为None）
+    """
+    ...
+```
+
 ### `~~.get_currency`
 
 ```python

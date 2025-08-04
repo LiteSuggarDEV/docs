@@ -99,16 +99,16 @@ export default withMermaid({
             items: [
               {
                 text: "LiteBot-NEO",
-                link: "/project/LiteBot/readme",
+                link: "/project/LiteBot/",
                 items: [
-                  { text: "简介", link: "/project/LiteBot/readme" },
+                  { text: "简介", link: "/project/LiteBot/" },
                   { text: "功能", link: "/project/LiteBot/menu" },
                 ],
               },
               {
                 text: "Suggar-NEO",
-                link: "/project/Suggar/readme",
-                items: [{ text: "简介", link: "/project/Suggar/readme" }],
+                link: "/project/Suggar/",
+                items: [{ text: "简介", link: "/project/Suggar/" }],
               },
             ],
           },
@@ -116,7 +116,7 @@ export default withMermaid({
       },
     ],
     footer: {
-      message: `MIT License 发布 ，部分内容使用 CC-BY-NC-SA-4.0 协议授权`,
+      message: `MIT License 发布 ，角色设定/提示词内容使用 CC-BY-NC-SA-4.0 协议授权`,
       copyright: `© LiteSuggarDEV 2024-${new Date().getFullYear()}`,
     },
     socialLinks: [
