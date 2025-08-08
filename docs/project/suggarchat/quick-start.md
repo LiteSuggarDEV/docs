@@ -35,7 +35,7 @@ uv add nonebot_plugin_suggarchat
   主要说明：
   对于部署一个简单的聊天机器人，你只需要在`config`的`default_preset`表填写`api_key`,`base_url`,`model`;并将`enable`的值改为 true。我们提供了一个即配即用的部署方式。
 
-  支持使用`${变量名}`作为环境变量占位符
+  支持使用`${变量名}`或者`{{变量名}}`作为环境变量占位符
 
 ### 提示词设置
 

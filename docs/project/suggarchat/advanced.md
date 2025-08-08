@@ -74,22 +74,6 @@
 
 ---
 
-## Adapter 类
-
-### register_adapter()
-
-**参数**
-
-- `func` (Callable): 适配器函数
-- `protocol` (str): 协议名称
-
-**异常**
-
-- TypeError: 适配器不可调用时抛出
-- ValueError: 协议适配器已存在时抛出
-
----
-
 ## Menu 类
 
 ### reg_menu()
@@ -201,59 +185,28 @@
 
 ### 规范
 
-适配器规范定义了适配器应该实现的功能，用作与模型沟通的桥梁。
-
-上文已经提及了 API 接口如何注册适配器，下面将进行详细介绍。
+适配器规范定义了适配器应该实现的功能，用作与模型沟通的桥梁，在3.2.0进行了重构。继承自ModelAdapter时会自动注册模型适配器，您无需手动实现注册。
 
 exapmle:
 
 ```python
-from nonebot import get_driver
-from nonebot.plugin import require
-
+from nonebot import require
+from typing import Any, Iterable
 require("nonebot_plugin_suggarchat")
-from nonebot_plugin_suggarchat.API import Adapter, config_manager, register_hook
-from nonebot_plugin_suggarchat.hook_manager import (
-    register_hook,
-)
 
-#必须实现的形式参数说明：
-#base_url: api地址（来自配置文件）
-#model: 模型名称
-#key: api key（来自配置文件）
-#messages: 消息列表
-#max_tokens: 最大token数（来自配置文件）
-#config 配置文件
-async def example_adapter(base_url:str, model:str, key:str, messages:list, max_tokens:int, config:dict)->str:
-    # 你的逻辑,必须返回一个字符串
-    # todo
-    return string
+from nonebot_plugin_suggarchat.API import ModelAdapter
 
-driver = get_driver()
+class YourAdapter(ModelAdapter):
+    # 需要实现call_api方法以及get_adapter_protocol()静态方法
 
-@driver.on_startup
-async def hook():
-    """
-    启动时注册
-    """
-    register_hook(init_config)
-
-
-async def init_config():
-    """
-    注册配置项
-    """
-    ada = Adapter()
-
-    config_manager.register_config("replace_me", default_value="")
-    config_manager.reg_model_config("replace_me", default_value="")
-    ada.register_adapter(adapter, "replace_me")
+    async def call_api(self, messages: Iterable[Any]) -> str:
+        ...
+    
+    def get_adapter_protocol() -> str | tuple[str, ...]:
+        ...
 
 ```
 
-### 上架 Nonebot 商店：
-
-推荐的命名格式：nonebot_plugin_suggarex_yourpluginname
 
 ## SuggarMatcher
 

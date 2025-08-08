@@ -17,7 +17,7 @@ Cloudflare Workers AI 协议适配器，用于 [SuggarChat](/project/suggarchat/
 - 方法二（手动安装）：
 
   ```bash
-  uv add nonebot_plugin_suggarex_cf
+  uv add nonebot_plugin_suggarchat[cloudflare]
   ```
 
   若使用方法二，还需在 `pyproject.toml` 中手动添加插件名：
