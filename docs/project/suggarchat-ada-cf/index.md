@@ -32,7 +32,7 @@ Cloudflare Workers AI 协议适配器，用于 [SuggarChat](/project/suggarchat/
 
 | 配置项       | 说明                                                                                                          | 默认值 |
 | ------------ | ------------------------------------------------------------------------------------------------------------- | ------ |
-| `cf_user_id` | Cloudflare Workers AI 用户 ID，请前往 [Workers AI 控制台](https://developers.cloudflare.com/workers-ai/) 获取 | `null` |
+| `cf_user_id` | Cloudflare Workers AI 用户 ID，请前往 [Workers AI 控制台](https://developers.cloudflare.com/workers-ai/) 获取 | `""` |
 
 ---
 
