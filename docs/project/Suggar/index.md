@@ -89,11 +89,3 @@ tools_calling: true
   ```shell
   nb orm upgrade
   ```
-
-## 注意事项
-
-**Tools调用**不支持非OPENAI以外的其他协议
-
-## 提示词配置
-
-我们已经公开了Suggar的Prompt，你可以在[这里](./prompt.md)查看。

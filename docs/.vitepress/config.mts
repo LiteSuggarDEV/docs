@@ -33,6 +33,32 @@ export default withMermaid({
         items: [
           { text: "前言", link: "/next" },
           {
+            text: "原创形象",
+            link: "/project/oc/",
+            items: [
+              { text: "Suggar", link: "/project/oc/suggar" },
+              { text: "KiriwaKosuzu", link: "/project/oc/kosuzu" },
+            ],
+          },
+          {
+            text: "机器人项目",
+            items: [
+              {
+                text: "LiteBot-NEO",
+                link: "/project/LiteBot/",
+                items: [
+                  { text: "简介", link: "/project/LiteBot/" },
+                  { text: "功能", link: "/project/LiteBot/menu" },
+                ],
+              },
+              {
+                text: "Suggar-NEO",
+                link: "/project/Suggar/",
+                items: [{ text: "简介", link: "/project/Suggar/" }],
+              },
+            ],
+          },
+          {
             text: "插件项目",
             items: [
               {
@@ -91,27 +117,6 @@ export default withMermaid({
                 items: [
                   { text: "指令", link: "/project/liteperm/docs/commands" },
                   { text: "API", link: "/project/liteperm/docs/API" },
-                ],
-              },
-            ],
-          },
-          {
-            text: "机器人项目",
-            items: [
-              {
-                text: "LiteBot-NEO",
-                link: "/project/LiteBot/",
-                items: [
-                  { text: "简介", link: "/project/LiteBot/" },
-                  { text: "功能", link: "/project/LiteBot/menu" },
-                ],
-              },
-              {
-                text: "Suggar-NEO",
-                link: "/project/Suggar/",
-                items: [
-                  { text: "简介", link: "/project/Suggar/" },
-                  { text: "角色档案", link: "/project/Suggar/intro" },
                 ],
               },
             ],
