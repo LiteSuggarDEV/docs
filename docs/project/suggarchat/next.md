@@ -77,7 +77,151 @@ at+文字：
 
 ### **配置项完整说明**
 
-#### 配置文件(3.1.0+)
+#### 配置文件(3.3.1+)
+
+```toml
+# ========================
+#      基本核心配置
+# ========================
+enable = false  # 是否启用 SuggarChat 主功能
+parse_segments = true  # 是否解析特殊消息段（如@提及/合并转发等）
+matcher_function = true  # 是否启用 SuggarMatcher 高级匹配功能
+preset = "default"  # 默认使用的模型预设配置名称
+group_prompt_character = "default"  # 群聊场景使用的提示词模板名称
+private_prompt_character = "default"  # 私聊场景使用的提示词模板名称
+
+# ========================
+#     预设模型扩展配置
+# ========================
+[preset_extension]
+backup_preset_list = []  # 主模型不可用时自动切换的备选模型预设列表
+
+# ========================
+#      默认预设配置
+# ========================
+[default_preset]
+model = ""  # 使用的AI模型名称（如gpt-3.5-turbo）
+name = "default"  # 当前预设的标识名称
+base_url = ""  # API服务的基础地址（为空则使用官方默认地址）
+api_key = ""  # 访问API所需的密钥
+protocol = "__main__"  # 协议适配器类型（保持默认即可）
+thought_chain_model = false  # 是否启用思维链模型优化（增强复杂问题处理）
+multimodal = false  # 是否支持多模态输入（如图片识别）
+
+# 预设模型的额外扩展参数
+[default_preset.extra]
+
+# ========================
+#       会话管理
+# ========================
+[session]
+session_control = false  # 是否启用会话超时自动清理
+session_control_time = 60  # 会话超时时间（单位：分钟）
+session_control_history = 10  # 会话历史记录最大保存条数
+session_max_tokens = 5000  # 单次会话上下文最大token容量
+
+# ========================
+#     安全与内容审查
+# ========================
+[cookies]
+cookie = ""  # 用于安全检测的Cookie字符串
+enable_cookie = false  # 是否启用Cookie泄露检测机制
+block_msg = [  # 触发安全熔断时随机返回的提示消息
+    "喵呜～这个问题有点超出Suggar的理解范围啦(歪头)",
+    "（耳朵耷拉）这个...Suggar暂时回答不了呢＞﹏＜",
+    # ...（其余提示语保持不变）
+    "（变魔术状）看！话题消失魔术成功喵～",
+]
+
+# ========================
+#       编码设置
+# ========================
+[encoding_settings]
+force_utf8 = true  # 强制将所有输入转换为UTF-8编码
+
+# ========================
+#      自动回复设置
+# ========================
+[autoreply]
+enable = false  # 是否启用自动回复系统
+global_enable = false  # 是否全局启用自动回复（无视会话状态）
+probability = 0.01  # 随机触发概率（0.01=1%）
+keywords = [  # 触发自动回复的关键字列表
+    "at",  # 当被@时触发
+]
+
+# ========================
+#      功能开关
+# ========================
+[function]
+synthesize_forward_message = true  # 是否合成合并转发消息
+nature_chat_style = true  # 是否启用自然对话风格优化
+poke_reply = true  # 是否响应戳一戳事件
+enable_group_chat = true  # 是否启用群聊功能
+enable_private_chat = true  # 是否启用私聊功能
+allow_custom_prompt = true  # 是否允许用户自定义提示词
+use_user_nickname = false  # 在群聊中使用QQ昵称而非群名片
+
+# ========================
+#      扩展行为设置
+# ========================
+[extended]
+say_after_self_msg_be_deleted = false  # 消息被撤回后是否自动回复
+group_added_msg = "你好，我是Suggar，欢迎使用SuggarAI聊天机器人..."  # 入群欢迎消息
+send_msg_after_be_invited = false  # 被邀请入群后是否主动发言
+after_deleted_say_what = [  # 消息被撤回后的随机回复列表
+    "Suggar说错什么话了吗～下次我会注意的呢～",
+    # ...（其余提示语保持不变）
+    "希望我能继续为你提供帮助，不要太在意我的小错误哦！",
+]
+
+# ========================
+#      管理员设置
+# ========================
+[admin]
+allow_send_to_admin = false  # 是否允许向管理群发送系统消息
+admin_group = 0  # 管理群组ID（0表示未设置）
+admins = []  # 管理员用户ID列表
+
+# ========================
+#   大语言模型(LLM)配置
+# ========================
+[llm_config]
+stream = false  # 是否启用流式响应（逐字输出）
+memory_lenth_limit = 50  # 记忆上下文的最大消息数量
+use_base_prompt = true  # 是否使用基础角色提示词
+max_tokens = 100  # 单次回复生成的最大token数
+tokens_count_mode = "bpe"  # Token计算模式：bpe(子词)/word(词语)/char(字符)
+enable_tokens_limit = true  # 是否启用上下文长度限制
+llm_timeout = 60  # API请求超时时间（秒）
+auto_retry = true  # 请求失败时自动重试
+max_retries = 3  # 最大重试次数
+
+# 工具调用子系统
+[llm_config.tools]
+enable_tools = true  # 是否启用外部工具调用功能
+enable_report = true  # 是否启用NSFW内容举报工具
+report_then_block = true  # 检测到违规内容后是否熔断会话
+require_tools = false  # 是否强制要求每次调用至少使用一个工具
+
+# ========================
+#      使用限额配置
+# ========================
+[usage_limit]
+enable_usage_limit = false  # 是否启用使用频率限制
+group_daily_limit = 100  # 单个群组每日最大使用次数
+user_daily_limit = 100  # 单个用户每日最大使用次数
+total_daily_limit = 1500  # 机器人每日总使用上限
+
+# ========================
+#       扩展预留区
+# ========================
+[extra]
+```
+
+#### 旧版(3.2.x-3.3.0)
+
+<details>
 
 ```toml
 # 基本配置
@@ -220,84 +364,6 @@ report_then_block = true # 消息被检测违规后是否熔断服务
 require_tools = false # 是否要求 LLM 调用至少一个 Tool
 
 [extra] # 额外配置
-```
-
-#### 旧版(3.0-3.0.1)
-
-<details>
-
-```toml
-preset = "default" # 预设模型配置名称（对应models目录下的json文件，default则为默认配置）
-model = "" # 模型选择
-base_url = "" # API基础地址
-api_key = "" # API密钥
-protocol = "__main__" # 协议适配器（默认使用主适配器）
-thought_chain_model = false #  特殊的思维链模型优化（移除正文的think标签）
-multimodal = false # 多模态模型传图支持
-memory_lenth_limit = 50 # 单会话允许存储的最大消息数
-enable = true # 是否启用SuggarChat
-fake_people = false # 是否允许启用自动回复模式支持
-global_fake_people = false # 是否全局启用自动回复模式（推荐使用指令控制可选开启，而不是启用这个选项）
-synthesize_forward_message = true #
-probability = 0.01 # 随机回复概率（0.01表示1%）
-keyword = "at" # 触发方式：at=被@时触发，其他值=以该词开头时必定回复
-nature_chat_style = false # 是否启用自然对话风格（正则表达式切文段）
-poke_reply = true # 是否启用戳一戳回复功能
-enable_group_chat = true # 是否启用群聊功能
-enable_private_chat = true # 是否启用私聊功能
-allow_custom_prompt = true # 是否允许用户自定义提示词的补充部分
-allow_send_to_admin = false # 是否允许向管理群组发送消息
-use_base_prompt = true # 是否使用基础提示词（让LLM理解消息段解析）
-admin_group = 0 # 管理群组ID
-admins = [] # 管理员用户ID列表（也可以在SUPERUSERS设置）
-stream = true # 是否启用流式传输
-max_tokens = 100 # 单次对话LLM最大生成token数
-tokens_count_mode = "bpe" # tokens计算模式：word（词）/bpe（子词）/char（字符）
-session_max_tokens = 1500 # 上下文最大token数（误差0.01%（中文实际测试结果））
-enable_tokens_limit = true # 是否启用上下文长度限制
-llm_timeout = 60 # LLM请求超时时间（秒，具体到适配器是否实现）
-say_after_self_msg_be_deleted = false # 消息被删除后是否自动回复
-group_added_msg = "你好，我是Suggar，欢迎使用SuggarAI聊天机器人..." # 被拉入群组时发送的欢迎消息
-send_msg_after_be_invited = false # 被邀请进群后是否发送消息
-parse_segments = true # 是否解析消息段（@/合并转发等）
-matcher_function = true # 是否启用SuggarMatcher
-session_control = false # 是否启用会话超时控制
-session_control_time = 60 # 会话超时时间（分钟）
-session_control_history = 10 # 保留的会话历史最大条数
-group_prompt_character = "default" # 群聊提示词模板名称（对应group_prompts目录下的txt文件）
-private_prompt_character = "default" # 私聊提示词模板名称（对应private_prompts目录下的txt文件）
-after_deleted_say_what = [ # 消息被删除后的随机回复内容
-    "Suggar说错什么话了吗～下次我会注意的呢～",
-    "抱歉啦，不小心说错啦～",
-    "嘿，发生什么事啦？我",
-    "唔，我是不是说错了什么？",
-    "纠错时间到，如果我说错了请告诉我！",
-    "发生了什么？我刚刚没听清楚呢~",
-    "我会记住的，绝对不再说错话啦~",
-    "哦，看来我又犯错了，真是不好意思！",
-    "哈哈，看来我得多读书了~",
-    "哎呀，真是个小口误，别在意哦~",
-    "Suggar苯苯的，偶尔说错话很正常嘛！",
-    "哎呀，我也有尴尬的时候呢~",
-    "希望我能继续为你提供帮助，不要太在意我的小错误哦！",
-]
-
-[preset_extension]
-backup_preset_list = [] # 自动切换的备选模型（预设名称）
-
-[tools]
-enable_tools = true # 启用Tools调用
-enable_report = true # 启用内置的NSFW举报工具（需要设置AdminGroup）
-require_tools = false # 是否要求LLM调用至少一个的Tool
-
-[cookies] # 检测提示词是否泄露 '电子水印'检测
-cookie = "" # Cookie字符串（需要手动注入到提示词）
-enable_cookie = false # 启用
-block_msg = [] # 检测到Cookie输出熔断会话时输出什么？
-
-[encoding_settings]
-force_utf8 = true # 是否启用编码强制转换(转换为UTF-8)？
-
 ```
 
 </details>
