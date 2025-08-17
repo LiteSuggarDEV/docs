@@ -44,3 +44,11 @@ uv add nonebot_plugin_suggarchat
 ## 文件位置
 
 如果您无法找到配置文件目录，可以在机器人根目录执行`nb localstore`即可获取到当前的存储位置。
+
+## 数据库配置
+
+从`3.4.0`开始，我们使用了`nonebot-plugin-orm`来存储数据，抛弃了原有的JSON存储(考虑到太原始以及文件数量过多导致inode可能耗尽的问题)，因此需要配置数据库连接。
+
+通常来说，您可以使用`pip install nonebot-plugin-orm[default]`来获得一个使用SQLite的即插即用配置。
+
+如果您需要配置MYSQL等，请安装对应的可选依赖，参考SQLAlchemy的连接地址配置，本文档不过多介绍。
