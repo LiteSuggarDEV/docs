@@ -28,97 +28,93 @@ export default withMermaid({
     logo: "/Suggar.png",
 
     sidebar: [
+      { text: "前言", items: [{ text: "前言", link: "/next" }] },
       {
-        text: "目录",
+        text: "原创形象",
         items: [
-          { text: "前言", link: "/next" },
+          { text: "首页", link: "/project/oc/" },
+          { text: "Suggar", link: "/project/oc/suggar" },
+          { text: "KiriwaKosuzu", link: "/project/oc/kosuzu" },
+        ],
+      },
+      {
+        text: "机器人项目",
+        items: [
           {
-            text: "原创形象",
-            link: "/project/oc/",
+            text: "LiteBot-NEO",
+            link: "/project/LiteBot/",
             items: [
-              { text: "Suggar", link: "/project/oc/suggar" },
-              { text: "KiriwaKosuzu", link: "/project/oc/kosuzu" },
+              { text: "简介", link: "/project/LiteBot/" },
+              { text: "功能", link: "/project/LiteBot/menu" },
             ],
           },
           {
-            text: "机器人项目",
+            text: "Suggar-NEO",
+            link: "/project/Suggar/",
+            items: [{ text: "简介", link: "/project/Suggar/" }],
+          },
+        ],
+      },
+
+      {
+        text: "插件项目",
+        items: [
+          {
+            text: "SuggarChat",
+            link: "/project/suggarchat",
             items: [
-              {
-                text: "LiteBot-NEO",
-                link: "/project/LiteBot/",
-                items: [
-                  { text: "简介", link: "/project/LiteBot/" },
-                  { text: "功能", link: "/project/LiteBot/menu" },
-                ],
-              },
-              {
-                text: "Suggar-NEO",
-                link: "/project/Suggar/",
-                items: [{ text: "简介", link: "/project/Suggar/" }],
-              },
+              { text: "快速开始", link: "/project/suggarchat/quick-start" },
+              { text: "进阶", link: "/project/suggarchat/next" },
+              { text: "高级", link: "/project/suggarchat/advanced" },
             ],
           },
           {
-            text: "插件项目",
+            text: "SuggarChat-CF",
+            link: "/project/suggarchat-ada-cf",
+            items: [{ text: "开始", link: "/project/suggarchat-ada-cf" }],
+          },
+          {
+            text: "EconomyValue",
+            link: "/project/value",
             items: [
               {
-                text: "SuggarChat",
-                link: "/project/suggarchat",
-                items: [
-                  { text: "快速开始", link: "/project/suggarchat/quick-start" },
-                  { text: "进阶", link: "/project/suggarchat/next" },
-                  { text: "高级", link: "/project/suggarchat/advanced" },
-                ],
-              },
-              {
-                text: "SuggarChat-CF",
-                link: "/project/suggarchat-ada-cf",
-                items: [{ text: "开始", link: "/project/suggarchat-ada-cf" }],
-              },
-              {
-                text: "EconomyValue",
-                link: "/project/value",
+                text: "api",
+                link: "/project/value/docs/api",
                 items: [
                   {
-                    text: "api",
-                    link: "/project/value/docs/api",
-                    items: [
-                      {
-                        text: "标准 API",
-                        link: "/project/value/docs/apis/standard",
-                      },
-                      {
-                        text: "服务层 API",
-                        link: "/project/value/docs/apis/advanced",
-                      },
-                      {
-                        text: "底层 API",
-                        link: "/project/value/docs/apis/kernel",
-                      },
-                      {
-                        text: "依赖注入",
-                        link: "/project/value/docs/apis/depends",
-                      },
-                      {
-                        text: "事件钩子",
-                        link: "/project/value/docs/apis/hooks",
-                      },
-                      {
-                        text: "迁移工具",
-                        link: "/project/value/docs/apis/migration",
-                      },
-                    ],
+                    text: "标准 API",
+                    link: "/project/value/docs/apis/standard",
+                  },
+                  {
+                    text: "服务层 API",
+                    link: "/project/value/docs/apis/advanced",
+                  },
+                  {
+                    text: "底层 API",
+                    link: "/project/value/docs/apis/kernel",
+                  },
+                  {
+                    text: "依赖注入",
+                    link: "/project/value/docs/apis/depends",
+                  },
+                  {
+                    text: "事件钩子",
+                    link: "/project/value/docs/apis/hooks",
+                  },
+                  {
+                    text: "迁移工具",
+                    link: "/project/value/docs/apis/migration",
                   },
                 ],
               },
-              {
-                text: "LitePerm",
-                link: "/project/liteperm",
-                items: [
-                  { text: "指令", link: "/project/liteperm/docs/commands" },
-                  { text: "API", link: "/project/liteperm/docs/API" },
-                ],
-              },
+            ],
+          },
+          {
+            text: "LitePerm",
+            link: "/project/liteperm",
+            items: [
+              { text: "指令", link: "/project/liteperm/docs/commands" },
+              { text: "API", link: "/project/liteperm/docs/API" },
             ],
           },
         ],

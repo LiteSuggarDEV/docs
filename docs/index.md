@@ -12,6 +12,9 @@ hero:
     - theme: alt
       text: 前往GitHub
       link: https://github.com/LiteSuggarDev
+    - theme: alt
+      text: Amrita文档站
+      link: https://amrita.suggar.top
 
 features:
   - title: 技术定位
