@@ -21,3 +21,11 @@
 - 邮箱：`windowserror@163.com`
 
 ![license](https://img.shields.io/badge/license-MIT-blue.svg)
+
+---
+
+<details>
+<summary>一些重要的东西</summary>
+
+[特别鸣谢](./thanks.md)
+</details>
