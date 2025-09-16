@@ -17,7 +17,7 @@
 
 ## 📞 联系/加入我们
 
-- **技术交流群：[`1002495699`](https://qm.qq.com/q/V5PsK4FNas)**
+- **技术交流群：[`1006893368`](https://qm.qq.com/q/IvG8Dm7W4m)**
 - 邮箱：`windowserror@163.com`
 
 ![license](https://img.shields.io/badge/license-MIT-blue.svg)
