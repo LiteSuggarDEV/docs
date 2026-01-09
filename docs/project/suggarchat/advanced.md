@@ -1,6 +1,6 @@
 # Sugarchat API 文档
 
-<details>
+::: details
 
 ## Config 类
 
@@ -139,18 +139,6 @@
 
 ---
 
-### set_admin_group()
-
-**参数**
-
-- `group_id` (int): 群组 ID
-
-**返回**
-
-- Admin: 支持链式调用的实例
-
----
-
 ## Chat 类
 
 ### get_msg()
@@ -176,7 +164,7 @@
 
 - Any: LLM 响应内容
 
-</details>
+:::
 
 ## 适配器
 
@@ -185,28 +173,31 @@
 
 ### 规范
 
-适配器规范定义了适配器应该实现的功能，用作与模型沟通的桥梁，在3.2.0进行了重构。继承自ModelAdapter时会自动注册模型适配器，您无需手动实现注册。
+适配器规范定义了适配器应该实现的功能，用作与模型沟通的桥梁，在 3.2.0 进行了重构。继承自 ModelAdapter 时会自动注册模型适配器，您无需手动实现注册。
 
 exapmle:
 
 ```python
 from nonebot import require
 from typing import Any, Iterable
-require("nonebot_plugin_suggarchat")
+require("amrita.plugins.chat")
 
-from nonebot_plugin_suggarchat.API import ModelAdapter
+from amrita.plugins.chat.API import ModelAdapter, UniResponse
 
 class YourAdapter(ModelAdapter):
     # 需要实现call_api方法以及get_adapter_protocol()静态方法
 
-    async def call_api(self, messages: Iterable[Any]) -> str:
+    async def call_api(self, messages: Iterable[Any]) -> UniResponse:
         ...
-    
+
+    async def call_tools(self, tools: Iterable[Any], tool_choice: ...) -> UniResponse:
+        ...
+        # 可选实现
+
     def get_adapter_protocol() -> str | tuple[str, ...]:
         ...
 
 ```
-
 
 ## SuggarMatcher
 
@@ -216,14 +207,14 @@ class YourAdapter(ModelAdapter):
 from nonebot import logger
 from nonebot.plugin import require
 
-require("nonebot_plugin_suggarchat")
-from nonebot_plugin_suggarchat.event import (
+require("amrita.plugins.chat")
+from amrita.plugins.chat.event import (
     BeforeChatEvent,
     BeforePokeEvent,
     ChatEvent,
     PokeEvent,
 )
-from nonebot_plugin_suggarchat.on_event import (
+from amrita.plugins.chat.on_event import (
     on_before_chat,
     on_before_poke,
     on_chat,
@@ -257,4 +248,6 @@ async def _(event: ChatEvent):
 
 ```
 
-更多示例代码请参考插件源码测试用例处。
+## Function Calling(`amrita.plugins.chat.API`)
+
+请见[Function Calling](./function_calling)一章
