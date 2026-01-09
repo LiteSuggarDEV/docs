@@ -30,6 +30,10 @@ export default withMermaid({
     sidebar: [
       { text: "前言", items: [{ text: "前言", link: "/next" }] },
       {
+        text: "使用协议",
+        items: [{ text: "运营Bot使用协议", link: "/license" }],
+      },
+      {
         text: "原创形象",
         items: [
           { text: "首页", link: "/project/oc/" },
